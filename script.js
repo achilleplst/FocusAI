@@ -46,11 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (logoImg.complete) {
             removeBackground(logoImg);
         } else {
-            logoImg.addEventListener('load', () => removeBackground(logoImg));
+            logoImg.addEventListener('load', () => removeBackground(logoImg), { once: true });
         }
     }
 
     function removeBackground(imgElement) {
+        if (imgElement.src.startsWith('data:')) return; // Empêche la boucle infinie
         // Create an offscreen image to avoid CORS canvas taint issues if any
         const img = new Image();
         img.crossOrigin = "Anonymous";
