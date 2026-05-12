@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Custom Cursor
-    const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     const linksAndButtons = document.querySelectorAll('a, button, .module-item');
 
@@ -15,9 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function animateCursor() {
-        if (cursorDot && cursorOutline) {
-            cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-            
+        if (cursorOutline) {
             outlineX += (mouseX - outlineX) * 0.15;
             outlineY += (mouseY - outlineY) * 0.15;
             cursorOutline.style.transform = `translate3d(${outlineX}px, ${outlineY}px, 0) translate(-50%, -50%)`;
