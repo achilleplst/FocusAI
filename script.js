@@ -1,6 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Hover effects on links (optional, if we still want background changes)
+    // 1. Custom Cursor
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
     const linksAndButtons = document.querySelectorAll('a, button, .module-item');
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let outlineX = mouseX;
+    let outlineY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+        if (cursorDot && cursorOutline) {
+            cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+            
+            outlineX += (mouseX - outlineX) * 0.15;
+            outlineY += (mouseY - outlineY) * 0.15;
+            cursorOutline.style.transform = `translate3d(${outlineX}px, ${outlineY}px, 0) translate(-50%, -50%)`;
+        }
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Change cursor color based on section background
+    const darkSections = document.querySelectorAll('.hero, .galerie-stats, .ingenierie, .contact, .stat-banner');
+    darkSections.forEach(sec => {
+        sec.addEventListener('mouseenter', () => document.body.classList.add('cursor-on-dark'));
+        sec.addEventListener('mouseleave', () => document.body.classList.remove('cursor-on-dark'));
+    });
 
     linksAndButtons.forEach(el => {
         el.addEventListener('mouseenter', () => {
