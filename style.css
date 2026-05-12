@@ -68,49 +68,6 @@ em, i {
     font-size: 11px;
 }
 
-/* Custom Cursor */
-.cursor-dot, .cursor-outline {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9999;
-    pointer-events: none;
-}
-
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--bg-dark);
-    transition: background-color 0.3s;
-}
-
-.cursor-outline {
-    width: 32px;
-    height: 32px;
-    border: 1px solid var(--bg-dark);
-    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.3s;
-}
-
-body.hovering .cursor-outline {
-    width: 56px;
-    height: 56px;
-    background-color: rgba(17, 47, 90, 0.2);
-}
-
-body.cursor-on-dark .cursor-dot {
-    background-color: var(--text-light);
-}
-
-body.cursor-on-dark .cursor-outline {
-    border-color: var(--text-light);
-}
-
-body.cursor-on-dark.hovering .cursor-outline {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
 /* Navigation */
 .navbar {
     position: fixed;
