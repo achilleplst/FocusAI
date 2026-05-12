@@ -77,27 +77,38 @@ em, i {
     border-radius: 50%;
     z-index: 9999;
     pointer-events: none;
-    mix-blend-mode: multiply;
 }
 
 .cursor-dot {
     width: 8px;
     height: 8px;
-    background-color: var(--accent-gold);
+    background-color: var(--bg-dark);
+    transition: background-color 0.3s;
 }
 
 .cursor-outline {
     width: 32px;
     height: 32px;
-    border: 1px solid var(--accent-gold);
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    border: 1px solid var(--bg-dark);
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.3s;
 }
 
 body.hovering .cursor-outline {
     width: 56px;
     height: 56px;
-    background-color: rgba(126, 217, 148, 0.2);
-    mix-blend-mode: multiply;
+    background-color: rgba(17, 47, 90, 0.2);
+}
+
+body.cursor-on-dark .cursor-dot {
+    background-color: var(--text-light);
+}
+
+body.cursor-on-dark .cursor-outline {
+    border-color: var(--text-light);
+}
+
+body.cursor-on-dark.hovering .cursor-outline {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Navigation */
@@ -817,6 +828,94 @@ body.hovering .cursor-outline {
 .stack-list strong {
     color: var(--accent-gold);
     font-weight: 400;
+}
+
+/* Solutions Details */
+.solutions-details {
+    padding: 0 60px 80px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.solutions-subtitle {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.solutions-desc {
+    color: var(--text-sec);
+    margin-bottom: 40px;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.case-card {
+    background-color: rgba(17, 47, 90, 0.03);
+    padding: 30px;
+    border-left: 2px solid var(--accent-main);
+}
+
+.case-card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: var(--font-heading);
+}
+
+/* Tarifs Section */
+.tarifs {
+    padding: 120px 60px;
+    background-color: var(--bg-main);
+}
+
+.tarifs-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tarifs-title {
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.tarifs-content {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.tarifs-content strong {
+    color: var(--accent-main);
+    font-weight: 400;
+}
+
+/* Contact Section */
+.contact {
+    padding: 120px 60px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.contact-container p {
+    font-size: 20px;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 /* Animations Reveal Text Words */

@@ -6,17 +6,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursorOutline = document.querySelector('.cursor-outline');
     const linksAndButtons = document.querySelectorAll('a, button, .module-item');
 
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let outlineX = mouseX;
+    let outlineY = mouseY;
 
-        // Using requestAnimationFrame for smoother performance
-        requestAnimationFrame(() => {
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-            cursorOutline.style.left = `${posX}px`;
-            cursorOutline.style.top = `${posY}px`;
-        });
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+        // Dot follows instantly
+        cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        
+        // Outline follows with easing for smooth fluid effect
+        outlineX += (mouseX - outlineX) * 0.15;
+        outlineY += (mouseY - outlineY) * 0.15;
+        cursorOutline.style.transform = `translate3d(${outlineX}px, ${outlineY}px, 0) translate(-50%, -50%)`;
+        
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Change cursor color based on section background
+    const darkSections = document.querySelectorAll('.hero, .galerie-stats, .ingenierie, .contact, .stat-banner');
+    darkSections.forEach(sec => {
+        sec.addEventListener('mouseenter', () => document.body.classList.add('cursor-on-dark'));
+        sec.addEventListener('mouseleave', () => document.body.classList.remove('cursor-on-dark'));
     });
 
     linksAndButtons.forEach(el => {
