@@ -1094,17 +1094,99 @@ body.cursor-on-dark.hovering .cursor-outline {
 }
 
 @media (max-width: 768px) {
+    /* Hide custom cursor on mobile */
+    .cursor-outline {
+        display: none !important;
+    }
+    body, a, button {
+        cursor: auto !important;
+    }
+
+    /* Padding adjustments for mobile */
+    .piliers, .declaration, .science, .ingenierie, .tarifs, .contact, .solutions-details {
+        padding: 60px 20px !important;
+    }
+
+    .piliers-container {
+        padding: 0;
+        margin-bottom: 60px;
+    }
+
+    /* Navbar */
     .navbar {
-        padding: 20px;
+        padding: 15px 20px;
     }
     .nav-links {
         display: none;
     }
-    .hero-title {
-        font-size: clamp(40px, 10vw, 60px);
+    .nav-logo img {
+        transform: scale(1.5) !important;
+        margin-left: 10px !important;
+        height: 60px !important;
     }
+    
+    /* Typography adjustments */
+    .hero-title, .science-title, .ingenierie-title, .contact-title, .tarifs-title, .solutions-subtitle {
+        font-size: clamp(32px, 8vw, 42px) !important;
+    }
+    .declaration-title {
+        font-size: clamp(32px, 8vw, 42px);
+        margin-bottom: 40px;
+    }
+
+    .hero-columns {
+        margin-top: 30px !important;
+    }
+
+    /* Piliers stacked */
     .piliers-container {
         flex-direction: column;
         gap: 40px;
+    }
+
+    /* Grid layouts */
+    .cases-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .footer-brand p {
+        margin: 0 auto;
+    }
+    .footer-brand img {
+        margin: 0 auto 20px auto;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    /* Stats */
+    .stat-giant {
+        font-size: clamp(60px, 15vw, 100px);
+    }
+    
+    .stats-col {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    /* Modules */
+    .module-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .module-time {
+        align-self: flex-start;
+    }
+
+    .stat-banner {
+        height: auto;
+        padding: 60px 20px;
     }
 }
