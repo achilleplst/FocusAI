@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateCursor();
 
     // Change cursor color based on section background
-    const darkSections = document.querySelectorAll('.hero, .galerie-stats, .ingenierie, .contact, .stat-banner');
+    const darkSections = document.querySelectorAll('.hero, .galerie-stats, .ingenierie, .contact, .stat-banner, .navbar, .footer');
     darkSections.forEach(sec => {
         sec.addEventListener('mouseenter', () => document.body.classList.add('cursor-on-dark'));
         sec.addEventListener('mouseleave', () => document.body.classList.remove('cursor-on-dark'));
