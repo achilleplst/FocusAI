@@ -147,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function runCounters(counters) {
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
+            const suffix = counter.getAttribute('data-suffix') || '';
             const duration = 2000; // 2 seconds
             const increment = target / (duration / 16); // 60fps
             
@@ -154,44 +155,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const updateCounter = () => {
                 current += increment;
                 if (current < target) {
-                    counter.innerText = Math.ceil(current);
+                    counter.innerText = Math.ceil(current) + suffix;
                     requestAnimationFrame(updateCounter);
                 } else {
-                    counter.innerText = target;
+                    counter.innerText = target + suffix;
                 }
             };
             updateCounter();
         });
     }
-
-    // 6. Hover Counter Animation (0% to 98%)
-    const hoverCounters = document.querySelectorAll('.hover-counter');
-    hoverCounters.forEach(el => {
-        let isAnimating = false;
-        el.addEventListener('mouseenter', () => {
-            if (isAnimating) return;
-            isAnimating = true;
-            const target = +el.getAttribute('data-target');
-            let current = 0;
-            const duration = 1200; // ms
-            const increment = target / (duration / 16); 
-            
-            const update = () => {
-                current += increment;
-                if (current < target) {
-                    el.innerText = Math.ceil(current) + '%';
-                    requestAnimationFrame(update);
-                } else {
-                    el.innerText = target + '%';
-                    setTimeout(() => isAnimating = false, 500); // Prevent instant replay
-                }
-            };
-            
-            // Add a little color flash for feedback
-            const originalColor = el.style.color;
-            el.style.color = "var(--text-light)";
-            update();
-            setTimeout(() => el.style.color = originalColor, duration);
-        });
-    });
 });
