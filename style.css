@@ -378,7 +378,7 @@ body.cursor-on-dark.hovering .cursor-outline {
 /* 2. Piliers et Intégrations */
 .piliers {
     background-color: var(--bg-main);
-    padding: 100px 0;
+    padding: 120px 0;
 }
 
 .piliers-container {
@@ -395,12 +395,23 @@ body.cursor-on-dark.hovering .cursor-outline {
     gap: 15px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.8s, transform 0.8s;
+    transition: opacity 0.8s, transform 0.8s, color 0.3s;
+    cursor: default;
 }
 
 .piliers.is-visible .pilier {
     opacity: 1;
     transform: translateY(0);
+}
+
+.piliers-container:hover .pilier:not(:hover) {
+    opacity: 0.4;
+    transform: scale(0.95);
+}
+
+.pilier:hover {
+    color: var(--accent-main);
+    transform: scale(1.05);
 }
 
 .piliers.is-visible .pilier:nth-child(1) { transition-delay: 0.1s; }
@@ -412,6 +423,12 @@ body.cursor-on-dark.hovering .cursor-outline {
     font-style: italic;
     font-size: 44px;
     color: var(--accent-gold);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.pilier:hover .pilier-num {
+    color: var(--accent-main);
+    transform: scale(1.1);
 }
 
 .pilier-label {
@@ -439,6 +456,13 @@ body.cursor-on-dark.hovering .cursor-outline {
     letter-spacing: 0.2em;
     opacity: 0.3;
     animation: scrollLeft 30s linear infinite;
+    cursor: default;
+}
+
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+    opacity: 0.6;
+    transition: opacity 0.3s;
 }
 
 @keyframes scrollLeft {
@@ -449,7 +473,7 @@ body.cursor-on-dark.hovering .cursor-outline {
 /* 3. Déclaration Centrale */
 .declaration {
     position: relative;
-    padding: 150px 0 0 0;
+    padding: 120px 0 0 0;
     text-align: center;
     background-color: var(--bg-main);
 }
