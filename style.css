@@ -391,7 +391,7 @@ body.cursor-on-dark.hovering .cursor-outline {
     display: flex;
     justify-content: space-around;
     padding: 0 60px;
-    margin-bottom: 60px;
+    margin-bottom: 120px;
 }
 
 .pilier {
@@ -855,9 +855,8 @@ body.cursor-on-dark.hovering .cursor-outline {
 
 /* Solutions Details */
 .solutions-details {
-    padding: 0 60px 80px 60px;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding: 120px 60px;
+    width: 100%;
 }
 
 .solutions-subtitle {
