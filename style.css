@@ -398,7 +398,7 @@ body.cursor-on-dark.hovering .cursor-outline {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s, transform 0.8s, color 0.3s;
@@ -427,7 +427,7 @@ body.cursor-on-dark.hovering .cursor-outline {
 .pilier-num {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: 44px;
+    font-size: 88px;
     color: var(--accent-gold);
     transition: color 0.3s, transform 0.3s;
 }
@@ -439,9 +439,9 @@ body.cursor-on-dark.hovering .cursor-outline {
 
 .pilier-label {
     font-family: var(--font-body);
-    font-size: 11px;
+    font-size: 20px;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.15em;
 }
 
 .separator {
