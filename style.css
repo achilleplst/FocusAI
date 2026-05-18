@@ -1054,6 +1054,24 @@ body.cursor-on-dark.hovering .cursor-outline {
     text-decoration: underline;
 }
 
+.back-to-top {
+    background: transparent;
+    color: var(--accent-sec);
+    border: 1px solid var(--accent-sec);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background 0.3s, color 0.3s;
+}
+
+.back-to-top:hover {
+    background: var(--accent-sec);
+    color: var(--bg-dark);
+}
+
 /* Animations Reveal Text Words */
 .word {
     display: inline-block;
