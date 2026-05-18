@@ -1260,6 +1260,14 @@ body.cursor-on-dark.hovering .cursor-outline {
         font-size: clamp(50px, 15vw, 80px);
     }
     
+    .stat-bg-number {
+        font-size: clamp(80px, 25vw, 120px);
+        right: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
     .stats-col {
         padding: 40px 20px;
         text-align: center;
