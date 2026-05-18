@@ -167,6 +167,17 @@ body.cursor-on-dark.hovering .cursor-outline {
     color: var(--text-light) !important;
 }
 
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover .btn-icon, .nav-cta:hover .btn-icon, .btn-text:hover .btn-icon {
+    transform: translate(3px, -3px);
+}
+
 @keyframes navAppear {
     to {
         transform: translateY(0);
