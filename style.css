@@ -454,10 +454,12 @@ body.cursor-on-dark.hovering .cursor-outline {
     overflow: hidden;
     padding: 40px 0;
     white-space: nowrap;
+    display: flex;
 }
 
 .marquee-content {
-    display: inline-block;
+    flex-shrink: 0;
+    padding-right: 50px; /* spacing before loop repeats */
     font-size: 14px;
     letter-spacing: 0.2em;
     opacity: 0.3;
@@ -472,8 +474,8 @@ body.cursor-on-dark.hovering .cursor-outline {
 }
 
 @keyframes scrollLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
 }
 
 /* 3. Déclaration Centrale */
