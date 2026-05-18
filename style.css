@@ -292,7 +292,7 @@ body.cursor-on-dark.hovering .cursor-outline {
 }
 
 .hero-title {
-    font-size: clamp(60px, 8vw, 120px);
+    font-size: clamp(40px, 6vw, 80px);
     margin-bottom: 30px;
     position: relative;
     z-index: 2;
