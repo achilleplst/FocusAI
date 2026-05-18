@@ -1155,9 +1155,10 @@ body.cursor-on-dark.hovering .cursor-outline {
         display: none;
     }
     .nav-logo img {
-        transform: scale(1) !important;
+        transform: scale(1.2) !important;
+        transform-origin: left center;
         margin-left: 0 !important;
-        height: 35px !important; /* Fit in header */
+        height: 45px !important; /* Larger logo on mobile */
     }
     .nav-cta {
         padding: 8px 12px;
@@ -1204,17 +1205,27 @@ body.cursor-on-dark.hovering .cursor-outline {
         padding: 30px 20px !important;
     }
     .footer-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 15px;
+        text-align: left;
+    }
+    .footer-brand {
+        grid-column: 1 / -1;
         text-align: center;
+        margin-bottom: 20px;
     }
     .footer-brand p {
         margin: 0 auto;
     }
     .footer-brand img {
         margin: 0 auto 20px auto;
-        height: 40px !important;
-        transform: scale(1) !important;
+        height: 50px !important;
+        transform: scale(1.2) !important;
+    }
+    .footer-contact {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 10px;
     }
     .footer-bottom {
         flex-direction: column;
