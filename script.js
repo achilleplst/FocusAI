@@ -39,6 +39,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Mobile Burger Menu Logic
+    const burgerMenu = document.getElementById('burgerMenu');
+    const navLinksContainer = document.getElementById('navLinks');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    if (burgerMenu && navLinksContainer) {
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                navLinksContainer.classList.remove('active');
+            });
+        });
+    }
+
     // 1.5. Remove Logo Background (Canvas Chroma Key)
     const logoImg = document.querySelector('.nav-logo img');
     if (logoImg) {
