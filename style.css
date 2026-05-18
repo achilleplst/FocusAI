@@ -1164,8 +1164,11 @@ body.cursor-on-dark.hovering .cursor-outline {
         gap: 20px !important;
         margin-top: 40px !important;
     }
-    .hero-text-left, .hero-text-right {
+    .hero-text-left {
         padding: 20px !important;
+    }
+    .hero-text-right {
+        display: none !important;
     }
     .btn-primary {
         width: 100% !important;
