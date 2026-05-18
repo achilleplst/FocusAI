@@ -920,6 +920,17 @@ body.cursor-on-dark.hovering .cursor-outline {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+.tarifs .btn-primary {
+    color: var(--accent-main);
+    border-color: var(--accent-main);
+}
+.tarifs .btn-primary::before {
+    background-color: var(--accent-main);
+}
+.tarifs .btn-primary:hover {
+    color: var(--text-light);
+}
+
 .tarifs-content:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
