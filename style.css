@@ -1176,9 +1176,9 @@ body.cursor-on-dark.hovering .cursor-outline {
     }
 
     /* Navbar fixes */
-    .navbar {
-        padding: 15px 20px;
-        background-color: var(--bg-dark); /* Solid background to avoid overlap */
+    .navbar, .navbar.scrolled {
+        padding: 15px 20px !important;
+        background-color: var(--bg-dark) !important;
         align-items: center;
     }
     .nav-links {
