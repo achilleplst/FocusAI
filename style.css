@@ -952,14 +952,6 @@ body.cursor-on-dark.hovering .cursor-outline {
     gap: 30px;
 }
 
-.btn-contact {
-    background-color: var(--text-light);
-    color: var(--accent-main);
-}
-.btn-contact:hover {
-    color: var(--text-light);
-}
-
 /* Footer Section */
 .footer {
     background-color: #091833;
