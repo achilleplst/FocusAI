@@ -131,14 +131,14 @@ body.cursor-on-dark.hovering .cursor-outline {
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
-    font-size: 14px;
+    font-size: 24px; /* x2 size */
 }
 
 .nav-links a {
     opacity: 0.7;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, color 0.3s;
 }
 
 .nav-links a:hover {
@@ -151,11 +151,14 @@ body.cursor-on-dark.hovering .cursor-outline {
 
 .nav-cta {
     padding: 10px 20px;
-    border: 1px solid var(--text-light);
+    background: var(--accent-main);
+    color: var(--text-light);
+    border: none;
     border-radius: 4px;
     position: relative;
     overflow: hidden;
     transition: color 0.3s;
+    font-weight: bold;
 }
 
 .nav-cta::before {
@@ -165,13 +168,13 @@ body.cursor-on-dark.hovering .cursor-outline {
     left: 0;
     width: 0;
     height: 100%;
-    background-color: var(--text-light);
+    background-color: var(--accent-sec);
     z-index: -1;
     transition: width 0.3s;
 }
 
 .nav-cta:hover {
-    color: var(--bg-dark);
+    color: var(--text-light);
 }
 
 .nav-cta:hover::before {
@@ -351,15 +354,18 @@ body.cursor-on-dark.hovering .cursor-outline {
 .btn-primary {
     display: inline-block;
     padding: 20px 40px;
-    background: transparent;
+    background: var(--accent-main);
     color: var(--text-light);
-    border: 1px solid var(--accent-gold);
+    border: none;
+    border-radius: 4px;
     font-family: var(--font-body);
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     position: relative;
     overflow: hidden;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(29, 93, 166, 0.3);
 }
 
 .btn-primary::before {
@@ -369,7 +375,7 @@ body.cursor-on-dark.hovering .cursor-outline {
     left: 0;
     width: 0;
     height: 100%;
-    background-color: var(--accent-gold);
+    background-color: var(--accent-sec);
     z-index: -1;
     transition: width 0.4s ease;
 }
@@ -416,7 +422,7 @@ body.cursor-on-dark.hovering .cursor-outline {
 }
 
 .pilier:hover {
-    color: var(--accent-main);
+    color: var(--bg-dark);
     transform: scale(1.05);
 }
 
@@ -427,13 +433,13 @@ body.cursor-on-dark.hovering .cursor-outline {
 .pilier-num {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: 88px;
-    color: var(--accent-gold);
+    font-size: 60px;
+    color: rgba(17, 47, 90, 0.3);
     transition: color 0.3s, transform 0.3s;
 }
 
 .pilier:hover .pilier-num {
-    color: var(--accent-main);
+    color: var(--bg-dark);
     transform: scale(1.1);
 }
 
@@ -502,7 +508,7 @@ body.cursor-on-dark.hovering .cursor-outline {
 .declaration-line {
     width: 0;
     height: 1px;
-    background-color: var(--accent-gold);
+    background-color: rgba(17, 47, 90, 0.3);
     margin: 0 auto 30px auto;
     transition: width 1.2s ease;
 }
@@ -670,7 +676,8 @@ body.cursor-on-dark.hovering .cursor-outline {
 .module-num {
     font-family: var(--font-heading);
     font-style: italic;
-    color: var(--accent-gold);
+    color: rgba(255, 255, 255, 0.3);
+    margin-right: 15px;
     font-size: 24px;
 }
 
@@ -846,13 +853,13 @@ body.cursor-on-dark.hovering .cursor-outline {
 .ing-num {
     font-family: var(--font-heading);
     font-style: italic;
-    color: var(--accent-gold);
+    color: rgba(255, 255, 255, 0.3);
     margin-right: 10px;
 }
 
 .stack-list strong {
-    color: var(--accent-gold);
-    font-weight: 400;
+    color: var(--text-light);
+    font-weight: 500;
 }
 
 /* Solutions Details */
@@ -880,7 +887,7 @@ body.cursor-on-dark.hovering .cursor-outline {
 .case-card {
     background-color: rgba(17, 47, 90, 0.03);
     padding: 40px 60px;
-    border-left: 2px solid var(--accent-main);
+    border-left: 2px solid rgba(17, 47, 90, 0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     border-radius: 0 12px 12px 0;
 }
