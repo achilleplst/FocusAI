@@ -168,4 +168,57 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCounter();
         });
     }
+
+    // 6. Formulaire d'Étude de Cas (Webhook Automation)
+    const caseStudyForm = document.getElementById('caseStudyForm');
+    const caseStudySuccess = document.getElementById('caseStudySuccess');
+    const caseStudySubmit = document.getElementById('caseStudySubmit');
+
+    if (caseStudyForm) {
+        caseStudyForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('caseStudyEmail').value;
+            
+            // Modifier le texte du bouton pendant le chargement
+            const originalText = caseStudySubmit.innerText;
+            caseStudySubmit.innerText = 'Envoi en cours...';
+            caseStudySubmit.style.opacity = '0.7';
+            caseStudySubmit.disabled = true;
+
+            try {
+                // REMPLACEZ CETTE URL PAR VOTRE WEBHOOK MAKE.COM OU ZAPIER
+                const webhookUrl = 'VOTRE_URL_WEBHOOK_ICI';
+                
+                if (webhookUrl === 'VOTRE_URL_WEBHOOK_ICI') {
+                    // Simulation si l'URL n'est pas encore configurée
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    console.log("Email capturé (simulation) :", email);
+                } else {
+                    // Envoi réel vers le webhook
+                    await fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ 
+                            email: email, 
+                            source: 'FocusAI Landing Page',
+                            date: new Date().toISOString()
+                        })
+                    });
+                }
+
+                // Afficher le message de succès
+                caseStudyForm.style.display = 'none';
+                caseStudySuccess.style.display = 'block';
+
+            } catch (error) {
+                console.error("Erreur lors de l'envoi au webhook", error);
+                alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer.");
+                caseStudySubmit.innerText = originalText;
+                caseStudySubmit.style.opacity = '1';
+                caseStudySubmit.disabled = false;
+            }
+        });
+    }
 });

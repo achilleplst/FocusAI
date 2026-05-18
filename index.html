@@ -198,10 +198,13 @@
         <div style="max-width: 600px; margin: 0 auto;" class="slide-up">
             <h2 style="font-family: var(--font-heading); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px;">Recevoir une Étude de Cas Détaillée</h2>
             <p style="opacity: 0.8; margin-bottom: 40px; font-size: 18px; line-height: 1.6;">Découvrez concrètement comment nous avons transformé les processus d'une agence partenaire (cahier des charges, solutions déployées et résultats chiffrés). Laissez votre email pour recevoir l'analyse complète.</p>
-            <form style="display: flex; flex-direction: column; gap: 15px;" onsubmit="event.preventDefault(); alert('Merci ! Vous recevrez l\'étude de cas d\'ici quelques instants.');">
-                <input type="email" placeholder="Votre adresse email professionnelle" required style="padding: 18px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; width: 100%; font-family: var(--font-body); font-size: 16px; outline: none;">
-                <button type="submit" class="btn-primary" style="width: 100%; background-color: var(--accent-gold); color: var(--bg-dark); border: none; font-weight: bold;">Recevoir l'étude de cas ↗</button>
+            <form id="caseStudyForm" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="email" id="caseStudyEmail" placeholder="Votre adresse email professionnelle" required style="padding: 18px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; width: 100%; font-family: var(--font-body); font-size: 16px; outline: none; transition: border-color 0.3s;">
+                <button type="submit" id="caseStudySubmit" class="btn-primary" style="width: 100%; border: none;">Recevoir l'étude de cas ↗</button>
             </form>
+            <div id="caseStudySuccess" style="display: none; color: #49A0E3; margin-top: 15px; font-weight: bold; padding: 15px; border: 1px solid #49A0E3; border-radius: 4px; background: rgba(73, 160, 227, 0.1);">
+                ✓ Parfait ! L'étude de cas a été envoyée à votre adresse email.
+            </div>
         </div>
     </section>
 
