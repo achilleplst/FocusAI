@@ -132,9 +132,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (counters.length > 0) {
                     runCounters(counters);
                 }
-
-                // Stop observing once animated
-                observer.unobserve(entry.target);
+            } else {
+                entry.target.classList.remove('is-visible');
+                // Reset counters
+                const counters = entry.target.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    counter.innerText = '0' + (counter.getAttribute('data-suffix') || '');
+                });
             }
         });
     }, observerOptions);
