@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // REMPLACEZ CETTE URL PAR VOTRE WEBHOOK MAKE.COM OU ZAPIER
-                const webhookUrl = 'https://hook.eu2.make.com/fh6vwftkztps4u739qg2elaaxlvqxa9t';
+                const webhookUrl = 'https://hook.eu2.make.com/p5vdfmo6y26tbsvom5x84horc7xk7r73';
                 
                 if (webhookUrl === 'VOTRE_URL_WEBHOOK_ICI') {
                     // Simulation si l'URL n'est pas encore configurée
