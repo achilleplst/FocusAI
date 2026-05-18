@@ -11,7 +11,7 @@
     --text-light: #ffffff;
     --text-dark: #141210;
 
-    --font-heading: 'Cormorant Garamond', serif;
+    --font-heading: 'Montserrat', sans-serif;
     --font-body: 'DM Sans', sans-serif;
 }
 
@@ -54,8 +54,9 @@ ul {
 /* Typography Utilities */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 em, i {
@@ -125,8 +126,9 @@ body.cursor-on-dark.hovering .cursor-outline {
 
 .nav-logo {
     font-family: var(--font-heading);
-    letter-spacing: 0.3em;
+    letter-spacing: 0.1em;
     font-size: 22px;
+    font-weight: 800;
 }
 
 .nav-links {
@@ -291,8 +293,12 @@ body.cursor-on-dark.hovering .cursor-outline {
 
 .hero-title {
     font-size: clamp(60px, 8vw, 120px);
-    margin-bottom: 40px;
-    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1);
