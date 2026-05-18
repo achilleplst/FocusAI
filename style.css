@@ -11,7 +11,7 @@
     --text-light: #ffffff;
     --text-dark: #141210;
 
-    --font-heading: 'Montserrat', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
     --font-body: 'DM Sans', sans-serif;
 }
 
@@ -179,7 +179,7 @@ body.cursor-on-dark.hovering .cursor-outline {
     position: relative;
     height: 100vh;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding: 60px;
     color: var(--text-light);
     overflow: hidden;
@@ -280,9 +280,10 @@ body.cursor-on-dark.hovering .cursor-outline {
     margin-bottom: 30px;
     position: relative;
     z-index: 2;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-weight: 800;
     text-transform: uppercase;
+    text-align: center;
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1);
