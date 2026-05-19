@@ -1440,5 +1440,9 @@ body.cursor-on-dark.hovering .cursor-outline {
     .stat-banner {
         height: auto;
         padding: 60px 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+        border-radius: 0;
+        width: auto;
     }
 }
