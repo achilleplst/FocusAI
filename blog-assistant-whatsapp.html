@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant WhatsApp immobilier | FocusAI</title>
+    <meta name="description" content="Assistant WhatsApp pour agents immobiliers">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="page-article">
+    <div class="cursor-outline"></div>
+    <nav class="navbar scrolled">
+        <div class="nav-logo"><a href="index.html"><img src="logo.png" alt="FocusAI" style="height:90px;transform:scale(3);transform-origin:left center;margin-left:20px;display:block;"></a></div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#solutions">Solutions</a><span class="dot">&middot;</span>
+            <a href="blog.html">Blog</a><span class="dot">&middot;</span>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="nav-actions" style="display:flex;align-items:center;gap:15px;">
+            <a href="#" onclick="openAuditModal(event)" class="nav-cta">Audit Gratuit</a>
+            <div class="burger-menu" id="burgerMenu"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <main class="article-main">
+        <a href="blog.html" class="article-back">&larr; Retour au blog</a>
+        <article class="article-content">
+            <span class="blog-card-category">Productivite</span>
+            <time class="blog-card-date" datetime="2026-04-22">22 avril 2026</time>
+            <h1>Assistant WhatsApp pour agents immobiliers : le guide complet</h1>
+            <p class="article-lead">WhatsApp est d&eacute;j&agrave; l'outil num&eacute;ro un de vos agents. L'IA s'y int&egrave;gre sans friction.</p><h2>Dict&eacute;e de comptes rendus</h2><p>Le commercial envoie un vocal apr&egrave;s visite ; l'assistant structure le compte rendu et le pousse dans le CRM.</p><h2>Relances vendeurs</h2><p>S&eacute;quences automatiques selon le statut du mandat, avec reprise manuelle en un clic.</p><h2>Adoption par l'&eacute;quipe</h2><p>Pas de nouvelle application : tout passe par une conversation WhatsApp famili&egrave;re.</p>
+        </article>
+        <aside class="article-cta">
+            <h2>Pr&ecirc;t &agrave; automatiser votre agence ?</h2>
+            <p>R&eacute;servez un audit gratuit avec FocusAI.</p>
+            <a href="#" onclick="openAuditModal(event)" class="btn-primary">Demander un audit</a>
+        </aside>
+    </main>
+    <footer class="footer"><div class="footer-bottom" style="padding:20px 60px;text-align:center;"><p>&copy; 2026 FocusAI &mdash; <a href="index.html">Accueil</a></p></div></footer>
+    <div id="auditModal" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeAuditModal()">&times;</button><form id="auditForm" style="display:flex;flex-direction:column;gap:15px;"><input type="text" id="auditName" class="modal-input" placeholder="Nom" required><input type="email" id="auditEmail" class="modal-input" placeholder="Email" required><input type="tel" id="auditPhone" class="modal-input" placeholder="Tel" required><input type="text" id="auditDomain" class="modal-input" placeholder="Activite" required><button type="submit" id="auditSubmitBtn" class="btn-primary" style="width:100%;border:none;">Envoyer</button></form><div id="auditSuccessMsg" style="display:none;color:#49A0E3;">OK</div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>

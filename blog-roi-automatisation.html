@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI automatisation immobiliere | FocusAI</title>
+    <meta name="description" content="ROI automatisation immobiliere agence">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="page-article">
+    <div class="cursor-outline"></div>
+    <nav class="navbar scrolled">
+        <div class="nav-logo"><a href="index.html"><img src="logo.png" alt="FocusAI" style="height:90px;transform:scale(3);transform-origin:left center;margin-left:20px;display:block;"></a></div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#solutions">Solutions</a><span class="dot">&middot;</span>
+            <a href="blog.html">Blog</a><span class="dot">&middot;</span>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="nav-actions" style="display:flex;align-items:center;gap:15px;">
+            <a href="#" onclick="openAuditModal(event)" class="nav-cta">Audit Gratuit</a>
+            <div class="burger-menu" id="burgerMenu"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <main class="article-main">
+        <a href="blog.html" class="article-back">&larr; Retour au blog</a>
+        <article class="article-content">
+            <span class="blog-card-category">Strategie</span>
+            <time class="blog-card-date" datetime="2026-03-15">15 mars 2026</time>
+            <h1>ROI de l'automatisation immobiliere : indicateurs cles</h1>
+            <p class="article-lead">Avant d'investir, les dirigeants veulent des chiffres. Voici les KPI que nous suivons chez FocusAI.</p><h2>Temps m&eacute;tier lib&eacute;r&eacute;</h2><p>Heures &eacute;conomis&eacute;es par semaine et par collaborateur sur t&acirc;ches administratives.</p><h2>Taux de r&eacute;ponse</h2><p>D&eacute;lai moyen de r&eacute;ponse aux leads et taux de prise de rendez-vous.</p><h2>Revenu indirect</h2><p>Mandats suppl&eacute;mentaires li&eacute;s &agrave; une meilleure r&eacute;activation de la base acqu&eacute;reurs.</p>
+        </article>
+        <aside class="article-cta">
+            <h2>Pr&ecirc;t &agrave; automatiser votre agence ?</h2>
+            <p>R&eacute;servez un audit gratuit avec FocusAI.</p>
+            <a href="#" onclick="openAuditModal(event)" class="btn-primary">Demander un audit</a>
+        </aside>
+    </main>
+    <footer class="footer"><div class="footer-bottom" style="padding:20px 60px;text-align:center;"><p>&copy; 2026 FocusAI &mdash; <a href="index.html">Accueil</a></p></div></footer>
+    <div id="auditModal" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeAuditModal()">&times;</button><form id="auditForm" style="display:flex;flex-direction:column;gap:15px;"><input type="text" id="auditName" class="modal-input" placeholder="Nom" required><input type="email" id="auditEmail" class="modal-input" placeholder="Email" required><input type="tel" id="auditPhone" class="modal-input" placeholder="Tel" required><input type="text" id="auditDomain" class="modal-input" placeholder="Activite" required><button type="submit" id="auditSubmitBtn" class="btn-primary" style="width:100%;border:none;">Envoyer</button></form><div id="auditSuccessMsg" style="display:none;color:#49A0E3;">OK</div></div></div>
+    <script src="script.js"></script>
+</body>
+</html>
