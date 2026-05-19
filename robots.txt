@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://focus-ai.studio/sitemap.xml
