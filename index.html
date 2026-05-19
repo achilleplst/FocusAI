@@ -54,14 +54,14 @@
     <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
-    <!-- Curseur allégé (uniquement l'outline pour éviter les lags) -->
-    <div class="cursor-outline"></div>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <div class="cursor-outline" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navigation principale">
         <div class="nav-logo">
-            <a href="index.html" style="display: block; cursor: none;">
-                <img src="logo.png" alt="FocusAI Logo" style="height: 90px; display: block; transform: scale(3); transform-origin: left center; margin-left: 20px;">
+            <a href="index.html" class="nav-logo-link" aria-label="FocusAI — Accueil">
+                <img src="logo.png" alt="" width="140" height="48" class="nav-logo-img">
             </a>
         </div>
         <div class="nav-links" id="navLinks">
@@ -73,13 +73,13 @@
             <span class="dot">·</span>
             <a href="#contact">Contact</a>
         </div>
-        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
-            <a href="#" onclick="openAuditModal(event)" class="nav-cta">Audit Gratuit <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-            <div class="burger-menu" id="burgerMenu">
+        <div class="nav-actions">
+            <a href="#" onclick="openAuditModal(event)" class="nav-cta">Audit gratuit <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+            <button type="button" class="burger-menu" id="burgerMenu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -96,22 +96,27 @@
         </div>
 
         <div class="hero-content">
-            <h1 class="hero-title reveal-text" style="max-width: 1000px; margin: 0 auto 30px auto; line-height: 1.1;">FocusAI : Automatisez votre Agence Immobilière grâce à l'IA</h1>
-            <div class="hero-columns" style="margin-top: 60px; align-items: stretch; gap: 30px;">
-                <div class="hero-text-left reveal-fade delay-1" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 12px; backdrop-filter: blur(10px); flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <p style="font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.9);">Ne perdez plus de temps sur des tâches que l'IA peut accomplir instantanément. Concentrez votre équipe sur la rentrée de mandats et la relation client.</p>
+            <h1 class="hero-title reveal-text">FocusAI : Automatisez votre agence immobilière grâce à l'IA</h1>
+            <p class="hero-lead">Infrastructure IA sur mesure, agents dédiés et automatisation intégrée à vos outils existants.</p>
+            <div class="hero-columns">
+                <div class="hero-card hero-text-left reveal-fade delay-1">
+                    <p>Ne perdez plus de temps sur des tâches que l'IA peut accomplir instantanément. Concentrez votre équipe sur la rentrée de mandats et la relation client.</p>
                 </div>
-                <div class="hero-cta-wrapper reveal-fade delay-2" style="display: flex; align-items: center; justify-content: center; flex: 0.8;">
-                    <a href="#" onclick="openAuditModal(event)" class="btn-primary" style="padding: 20px 40px; font-size: 18px; display: flex; align-items: center; justify-content: center; gap: 5px;">Démarrer l'audit <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                <div class="hero-cta-wrapper reveal-fade delay-2">
+                    <a href="#" onclick="openAuditModal(event)" class="btn-primary btn-primary--hero">Démarrer l'audit <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
                 </div>
-                <div class="hero-text-right reveal-fade delay-1" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 12px; backdrop-filter: blur(10px); flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                    <p style="font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.9);">Des systèmes sur mesure intégrés directement à vos outils actuels pour diviser par deux le temps de traitement de votre agence.</p>
+                <div class="hero-card hero-text-right reveal-fade delay-1">
+                    <p>Des systèmes sur mesure intégrés directement à vos outils actuels pour diviser par deux le temps de traitement de votre agence.</p>
                 </div>
             </div>
+            <a href="#solutions" class="scroll-indicator" aria-label="Découvrir les solutions">
+                <span>Découvrir</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bounce-arrow" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </a>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
     <!-- 2. Piliers et Intégrations -->
     <section class="piliers section-animate" id="solutions">
         <div class="piliers-container">
@@ -133,22 +138,22 @@
         <div class="solutions-details">
             <h3 class="solutions-subtitle">Infrastructure IA & Agents IA Immobilier</h3>
             <p class="solutions-desc">Nos solutions ne sont pas des logiciels génériques. Chez FocusAI, nous construisons une <strong>infrastructure IA</strong> unique, déploions des <strong>agents IA immobilier</strong>, et adaptons le tout aux processus spécifiques de chaque agence.</p>
-            <p class="solutions-desc" style="font-weight: 500; color: var(--accent-main); font-size: 20px; margin-top: 20px;">↓ Voici quelques exemples d'automatisation immobilière réalisés pour nos clients :</p>
+            <p class="solutions-desc solutions-desc--highlight">↓ Voici quelques exemples d'automatisation immobilière réalisés pour nos clients :</p>
             <div class="cases-grid">
                 <div class="case-card">
                     <h4>Qualification Acquéreurs Entrants</h4>
                     <p><strong>Agence Immobilière Indépendante</strong></p>
-                    <p style="margin-top:10px; opacity:0.8;">Économie de 5h par jour sur le traitement des leads. Qualification 100% automatisée des capacités de financement et des critères via WhatsApp avec redirection immédiate des profils chauds.</p>
+                    <p class="case-card-desc">Économie de 5h par jour sur le traitement des leads. Qualification 100% automatisée des capacités de financement et des critères via WhatsApp avec redirection immédiate des profils chauds.</p>
                 </div>
                 <div class="case-card">
                     <h4>Assistant Commercial IA</h4>
                     <p><strong>Agence de Tours (8 collaborateurs)</strong></p>
-                    <p style="margin-top:10px; opacity:0.8;">Zéro outil supplémentaire : un assistant WhatsApp qui dicte les comptes rendus, qualifie les vendeurs, et relance automatiquement sans friction pour les 8 collaborateurs de l'agence.</p>
+                    <p class="case-card-desc">Zéro outil supplémentaire : un assistant WhatsApp qui dicte les comptes rendus, qualifie les vendeurs, et relance automatiquement sans friction pour les 8 collaborateurs de l'agence.</p>
                 </div>
                 <div class="case-card">
                     <h4>Relances Acquéreurs</h4>
                     <p><strong>Réseau d'Agences (Grand Est)</strong></p>
-                    <p style="margin-top:10px; opacity:0.8;">Élimination totale des oublis de relance post-visite. Déclenchement conditionnel à J+7 et réactivation d'une base de 10 000 contacts dormants synchronisée en temps réel avec le CRM.</p>
+                    <p class="case-card-desc">Élimination totale des oublis de relance post-visite. Déclenchement conditionnel à J+7 et réactivation d'une base de 10 000 contacts dormants synchronisée en temps réel avec le CRM.</p>
                 </div>
             </div>
         </div>
@@ -186,7 +191,7 @@
                 <h2 class="science-title">Processus d'Automatisation Immobilière</h2>
                 <span class="science-tag">( MÉTHODE ÉPROUVÉE )</span>
                 <p class="science-body">Nous ne vous vendons pas un outil standard, nous vous accompagnons dans une transition technologique complète. De la première discussion au déploiement final, chaque étape est structurée pour garantir l'adoption par vos équipes et un retour sur investissement immédiat.</p>
-                <a href="#contact" class="btn-text" style="display: inline-flex; align-items: center; gap: 5px;">Démarrer le processus <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                <a href="#contact" class="btn-text btn-text--inline">Démarrer le processus <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
             </div>
             <div class="science-right catalogue">
                 <div class="module-item stagger-item">
@@ -242,15 +247,16 @@
     </section>
 
     <!-- 6. Formulaire d'Étude de Cas -->
-    <section class="case-study-form section-animate" style="background-color: var(--bg-dark); color: var(--text-light); padding: 120px 20px; text-align: center;">
-        <div style="max-width: 600px; margin: 0 auto;" class="slide-up">
-            <h2 style="font-family: var(--font-heading); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px;">Recevoir une Étude de Cas Détaillée</h2>
-            <p style="opacity: 0.8; margin-bottom: 40px; font-size: 18px; line-height: 1.6;">Découvrez concrètement comment nous avons transformé les processus d'une agence partenaire (cahier des charges, solutions déployées et résultats chiffrés). Laissez votre email pour recevoir l'analyse complète.</p>
-            <form id="caseStudyForm" style="display: flex; flex-direction: column; gap: 15px;">
-                <input type="email" id="caseStudyEmail" placeholder="Votre adresse email professionnelle" required style="padding: 18px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; width: 100%; font-family: var(--font-body); font-size: 16px; outline: none; transition: border-color 0.3s;">
-                <button type="submit" id="caseStudySubmit" class="btn-primary" style="width: 100%; border: none; display: flex; align-items: center; justify-content: center; gap: 5px;">Recevoir l'étude de cas <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></button>
+    <section class="case-study-form section-animate" aria-labelledby="case-study-title">
+        <div class="case-study-inner slide-up">
+            <h2 id="case-study-title" class="case-study-title">Recevoir une étude de cas détaillée</h2>
+            <p class="case-study-desc">Découvrez concrètement comment nous avons transformé les processus d'une agence partenaire (cahier des charges, solutions déployées et résultats chiffrés). Laissez votre email pour recevoir l'analyse complète.</p>
+            <form id="caseStudyForm" class="case-study-form-fields" novalidate>
+                <label class="sr-only" for="caseStudyEmail">Email professionnel</label>
+                <input type="email" id="caseStudyEmail" class="modal-input" placeholder="Votre adresse email professionnelle" required autocomplete="email">
+                <button type="submit" id="caseStudySubmit" class="btn-primary btn-primary--block">Recevoir l'étude de cas <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></button>
             </form>
-            <div id="caseStudySuccess" style="display: none; color: #49A0E3; margin-top: 15px; font-weight: bold; padding: 15px; border: 1px solid #49A0E3; border-radius: 4px; background: rgba(73, 160, 227, 0.1);">
+            <div id="caseStudySuccess" class="form-success" role="status" aria-live="polite" hidden>
                 ✓ Parfait ! L'étude de cas a été envoyée à votre adresse email.
             </div>
         </div>
@@ -265,7 +271,7 @@
                 <br>
                 <p>C'est pourquoi nous concevons des <strong>architectures de croissance 100% personnalisées</strong>. Le coût de nos intégrations est évalué au cas par cas, en fonction de la complexité de vos systèmes et du temps gagné estimé.</p>
                 <br><br>
-                <a href="#" onclick="openAuditModal(event)" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 5px;">Demander une estimation <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                <a href="#" onclick="openAuditModal(event)" class="btn-primary btn-primary--inline">Demander une estimation <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
             </div>
         </div>
     </section>
@@ -276,8 +282,8 @@
             <h2 class="contact-title">Prêt à automatiser ?</h2>
             <p>Réservez votre audit gratuit ou contactez-nous directement pour discuter de vos besoins.</p>
             <div class="contact-links">
-                <a href="#" onclick="openAuditModal(event)" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 5px;">Réserver un Audit <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-                <a href="mailto:contact@focus-ai.studio" class="btn-text" style="color: white; border-color: white;">contact@focus-ai.studio</a>
+                <a href="#" onclick="openAuditModal(event)" class="btn-primary btn-primary--inline">Réserver un audit <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                <a href="mailto:contact@focus-ai.studio" class="btn-text btn-text--light">contact@focus-ai.studio</a>
             </div>
         </div>
     </section>
@@ -287,7 +293,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="logo.png" alt="FocusAI Logo" style="height: 60px; margin-bottom: 20px;">
+                <img src="logo.png" alt="FocusAI" class="footer-logo" width="120" height="48">
                 <p>Architectures de croissance automatisées pour les agences immobilières. Oubliez la prospection chronophage, passez à l'ère de l'IA.</p>
             </div>
             <div class="footer-links">
@@ -310,7 +316,7 @@
                 <h4>Contact</h4>
                 <p>contact@focus-ai.studio</p>
                 <p>Basé en France</p>
-                <a href="#" onclick="openAuditModal(event)" style="display:inline-block; margin-top:10px; color:var(--accent-sec); text-decoration:underline;">Prendre RDV</a>
+                <a href="#" onclick="openAuditModal(event)" class="footer-rdv-link">Prendre RDV</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -325,19 +331,23 @@
     </footer>
 
     <!-- Audit Modal -->
-    <div id="auditModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeAuditModal()">&times;</button>
-            <h2 style="font-family: var(--font-heading); margin-bottom: 10px; font-size: 28px;">Demande d'Audit</h2>
-            <p style="opacity: 0.8; margin-bottom: 25px; font-size: 15px; line-height: 1.5;">Laissez-nous vos coordonnées, un expert FocusAI vous recontactera très rapidement pour évaluer votre potentiel d'automatisation.</p>
-            <form id="auditForm" style="display: flex; flex-direction: column; gap: 15px;">
-                <input type="text" id="auditName" class="modal-input" placeholder="Prénom & Nom" required>
-                <input type="email" id="auditEmail" class="modal-input" placeholder="Email professionnel" required>
-                <input type="tel" id="auditPhone" class="modal-input" placeholder="Numéro de téléphone" required>
-                <input type="text" id="auditDomain" class="modal-input" placeholder="Domaine d'activité (ex: Transaction...)" required>
-                <button type="submit" id="auditSubmitBtn" class="btn-primary" style="width: 100%; border: none; margin-top: 10px;">Envoyer la demande</button>
+    <div id="auditModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="audit-modal-title" aria-hidden="true">
+        <div class="modal-content" role="document">
+            <button type="button" class="modal-close" onclick="closeAuditModal()" aria-label="Fermer la fenêtre">&times;</button>
+            <h2 id="audit-modal-title" class="modal-title">Demande d'audit</h2>
+            <p class="modal-desc">Laissez-nous vos coordonnées, un expert FocusAI vous recontactera très rapidement pour évaluer votre potentiel d'automatisation.</p>
+            <form id="auditForm" class="modal-form">
+                <label class="sr-only" for="auditName">Nom complet</label>
+                <input type="text" id="auditName" class="modal-input" placeholder="Prénom & Nom" required autocomplete="name">
+                <label class="sr-only" for="auditEmail">Email</label>
+                <input type="email" id="auditEmail" class="modal-input" placeholder="Email professionnel" required autocomplete="email">
+                <label class="sr-only" for="auditPhone">Téléphone</label>
+                <input type="tel" id="auditPhone" class="modal-input" placeholder="Numéro de téléphone" required autocomplete="tel">
+                <label class="sr-only" for="auditDomain">Domaine d'activité</label>
+                <input type="text" id="auditDomain" class="modal-input" placeholder="Domaine d'activité (ex: Transaction…)" required>
+                <button type="submit" id="auditSubmitBtn" class="btn-primary btn-primary--block">Envoyer la demande</button>
             </form>
-            <div id="auditSuccessMsg" style="display: none; color: #49A0E3; margin-top: 15px; font-weight: bold; padding: 15px; border: 1px solid #49A0E3; border-radius: 4px; background: rgba(73, 160, 227, 0.1);">
+            <div id="auditSuccessMsg" class="form-success" role="status" aria-live="polite" hidden>
                 ✓ Demande envoyée ! Nous vous contactons très vite.
             </div>
         </div>
