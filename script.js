@@ -241,4 +241,66 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 7. Audit Modal Logic
+    window.openAuditModal = function(e) {
+        if(e) e.preventDefault();
+        const modal = document.getElementById('auditModal');
+        if(modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            
+            // Close mobile menu if open
+            const bMenu = document.getElementById('burgerMenu');
+            const nLinks = document.getElementById('navLinks');
+            if(bMenu && bMenu.classList.contains('active')) {
+                bMenu.classList.remove('active');
+                nLinks.classList.remove('active');
+            }
+        }
+    };
+
+    window.closeAuditModal = function() {
+        const modal = document.getElementById('auditModal');
+        if(modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
+    const auditForm = document.getElementById('auditForm');
+    if(auditForm) {
+        auditForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('auditSubmitBtn');
+            const originalText = btn.innerText;
+            btn.innerText = 'Envoi en cours...';
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+
+            const payload = {
+                name: document.getElementById('auditName').value,
+                email: document.getElementById('auditEmail').value,
+                phone: document.getElementById('auditPhone').value,
+                domain: document.getElementById('auditDomain').value,
+                source: "FocusAI - Demande d'Audit Pop-up",
+                date: new Date().toISOString()
+            };
+
+            try {
+                await fetch('https://hook.eu2.make.com/p5vdfmo6y26tbsvom5x84horc7xk7r73', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                auditForm.style.display = 'none';
+                document.getElementById('auditSuccessMsg').style.display = 'block';
+            } catch (err) {
+                console.error(err);
+                btn.innerText = 'Erreur. Réessayez.';
+                btn.style.opacity = '1';
+                btn.disabled = false;
+            }
+        });
+    }
 });

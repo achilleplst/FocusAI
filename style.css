@@ -1135,6 +1135,82 @@ body.cursor-on-dark.hovering .cursor-outline {
     }
 }
 
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 18, 40, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    color: var(--text-light);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 28px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
+
+.modal-input {
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.modal-input:focus {
+    border-color: var(--accent-sec);
+    background: rgba(255, 255, 255, 0.08);
+}
+
 @media (max-width: 768px) {
     /* Hide custom cursor on mobile */
     .cursor-outline {
@@ -1175,7 +1251,20 @@ body.cursor-on-dark.hovering .cursor-outline {
         text-align: center;
         padding: 15px 20px !important;
         font-size: 14px !important;
-        white-space: nowrap;
+        white-space: normal; /* allow text wrapping if needed */
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    form {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .tarifs-content {
+        padding: 30px 20px !important;
+        text-align: center;
     }
 
     /* Navbar fixes */
