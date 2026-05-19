@@ -288,20 +288,13 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                // REMPLACEZ CE LIEN PAR UN NOUVEAU WEBHOOK MAKE.COM SPÉCIFIQUE À L'AUDIT
-                const auditWebhookUrl = 'https://hook.eu2.make.com/NOUVEAU_LIEN_WEBHOOK_ICI';
+                const auditWebhookUrl = 'https://hook.eu2.make.com/dn74zfv9mkhvx62s6lwa9gu9z1yyj83r';
                 
-                if (auditWebhookUrl !== 'https://hook.eu2.make.com/NOUVEAU_LIEN_WEBHOOK_ICI') {
-                    await fetch(auditWebhookUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                } else {
-                    // Simulation si le webhook n'est pas encore mis en place
-                    await new Promise(resolve => setTimeout(resolve, 1000));
-                    console.log("Données d'audit prêtes à être envoyées :", payload);
-                }
+                await fetch(auditWebhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
 
                 auditForm.style.display = 'none';
                 document.getElementById('auditSuccessMsg').style.display = 'block';
