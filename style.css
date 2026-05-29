@@ -141,7 +141,7 @@ body.cursor-on-dark.hovering .cursor-outline {
     display: block;
     height: 48px;
     width: auto;
-    transform: scale(3.1);
+    transform: scale(4.3);
     transform-origin: left center;
     margin-left: 12px;
 }
@@ -1395,7 +1395,7 @@ body.cursor-on-dark.hovering .cursor-outline {
     }
     .nav-logo-img {
         height: 36px !important;
-        transform: scale(2.5) !important;
+        transform: scale(3.5) !important;
         transform-origin: left center;
         margin-left: 8px !important;
     }
