@@ -443,6 +443,27 @@ body.cursor-on-dark.hovering .cursor-outline {
     color: var(--text-light) !important;
 }
 
+.btn-secondary {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: transparent;
+    color: var(--text-light) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
 /* 2. Piliers et Intégrations */
 .piliers {
     background-color: var(--bg-main);
@@ -1258,6 +1279,7 @@ body.cursor-on-dark.hovering .cursor-outline {
 .modal-input:focus {
     border-color: var(--accent-sec);
     background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(73, 160, 227, 0.25);
 }
 
 @media (max-width: 768px) {
