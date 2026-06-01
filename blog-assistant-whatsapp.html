@@ -14,11 +14,11 @@
 <body class="page-article">
     <div class="cursor-outline"></div>
     <nav class="navbar scrolled">
-        <div class="nav-logo"><a href="index.html" class="nav-logo-link"><img src="logo.png" alt="FocusAI" class="nav-logo-img"></a></div>
+        <div class="nav-logo"><a href="/" class="nav-logo-link"><img src="logo.png" alt="FocusAI" class="nav-logo-img"></a></div>
         <div class="nav-links" id="navLinks">
-            <a href="index.html#solutions">Solutions</a><span class="dot">&middot;</span>
+            <a href="/#solutions">Solutions</a><span class="dot">&middot;</span>
             <a href="blog.html">Blog</a><span class="dot">&middot;</span>
-            <a href="index.html#contact">Contact</a>
+            <a href="/#contact">Contact</a>
         </div>
         <div class="nav-actions" style="display:flex;align-items:center;gap:15px;">
             <a href="#" onclick="openAuditModal(event)" class="nav-cta">Audit Gratuit</a>
@@ -39,7 +39,7 @@
             <a href="#" onclick="openAuditModal(event)" class="btn-primary">Demander un audit</a>
         </aside>
     </main>
-    <footer class="footer"><div class="footer-bottom" style="padding:20px 60px;text-align:center;"><p>&copy; 2026 FocusAI &mdash; <a href="index.html">Accueil</a></p></div></footer>
+    <footer class="footer"><div class="footer-bottom" style="padding:20px 60px;text-align:center;"><p>&copy; 2026 FocusAI &mdash; <a href="/">Accueil</a></p></div></footer>
     <div id="auditModal" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeAuditModal()">&times;</button><form id="auditForm" style="display:flex;flex-direction:column;gap:15px;"><input type="text" id="auditName" class="modal-input" placeholder="Nom" required><input type="email" id="auditEmail" class="modal-input" placeholder="Email" required><input type="tel" id="auditPhone" class="modal-input" placeholder="Tel" required><input type="text" id="auditDomain" class="modal-input" placeholder="Activite" required><button type="submit" id="auditSubmitBtn" class="btn-primary" style="width:100%;border:none;">Envoyer</button></form><div id="auditSuccessMsg" style="display:none;color:#49A0E3;">OK</div></div></div>
     <script src="script.js"></script>
 </body>
