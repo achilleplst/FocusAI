@@ -25,6 +25,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -34,6 +36,8 @@ body {
     font-weight: 300;
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
     cursor: none; /* Custom cursor */
 }
 
