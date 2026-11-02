@@ -69,7 +69,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,200;0,300;0,400;1,300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
     
@@ -86,7 +86,6 @@
     <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
-    <!-- Curseur allégé (uniquement l'outline pour éviter les lags) -->
     <div class="cursor-outline"></div>
 
     <!-- Navigation -->
@@ -109,8 +108,8 @@
             <span class="dot">·</span>
             <a href="#contact">Contact</a>
         </div>
-        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
-            <a href="#" onclick="openAuditModal(event)" class="nav-cta">Audit Gratuit <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+        <div class="nav-actions">
+            <a href="#" onclick="openAuditModal(event)" class="nav-cta">Audit Gratuit</a>
             <div class="burger-menu" id="burgerMenu">
                 <span></span>
                 <span></span>
@@ -119,200 +118,235 @@
         </div>
     </nav>
 
-    <!-- 1. Hero Section -->
+    <!-- 1. Hero -->
     <header class="hero section-animate">
-        <div class="hero-bg">
-            <div class="hero-gradient"></div>
-            <div class="hero-grid"></div>
-            <div class="hero-orbs">
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
-            </div>
-            <div class="hero-overlay"></div>
+        <div class="hero-eyebrow">
+            <span class="hero-tag">Automatisation Immobilière par FocusAI</span>
         </div>
-
-        <div class="hero-content">
-            <h1 class="hero-title reveal-text">FocusAI : Automatisez votre Agence Immobilière grâce à l'IA</h1>
-            <div class="hero-columns">
-                <div class="hero-card hero-text-left reveal-fade delay-1" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%); border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); backdrop-filter: blur(12px);">
-                    <p style="color: rgba(255, 255, 255, 0.95);">Ne perdez plus de temps sur des tâches que l'IA peut accomplir instantanément. Concentrez votre équipe sur la rentrée de mandats et la relation client.</p>
-                </div>
-                <div class="hero-cta-wrapper reveal-fade delay-2">
-                    <a href="#" onclick="openAuditModal(event)" class="btn-primary btn-primary--hero">Démarrer l'audit <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-                </div>
-                <div class="hero-card hero-text-right reveal-fade delay-1" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%); border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); backdrop-filter: blur(12px);">
-                    <p style="color: rgba(255, 255, 255, 0.95);">Des systèmes sur mesure intégrés directement à vos outils actuels pour diviser par deux le temps de traitement de votre agence.</p>
-                </div>
+        <h1 class="hero-title">Votre agence immobilière,<br><em>pilotée par l'IA.</em></h1>
+        <p class="hero-subtitle">Vos agents passent des heures sur des tâches répétitives. Qualification de leads, relances, comptes rendus… Nous construisons les systèmes IA qui s'en chargent à leur place.</p>
+        <div class="hero-actions">
+            <a href="#" onclick="openAuditModal(event)" class="btn-primary">Démarrer l'audit gratuit</a>
+            <a href="#solutions" class="btn-ghost">Voir les solutions</a>
+        </div>
+        <div class="hero-proof">
+            <div class="proof-item">
+                <strong>100+</strong>
+                <span>agences auditées</span>
+            </div>
+            <div class="proof-divider"></div>
+            <div class="proof-item">
+                <strong>98%</strong>
+                <span>de satisfaction</span>
+            </div>
+            <div class="proof-divider"></div>
+            <div class="proof-item">
+                <strong>3–6 sem.</strong>
+                <span>pour déployer</span>
             </div>
         </div>
     </header>
 
     <main>
-    <!-- 2. Piliers et Intégrations -->
-    <section class="piliers section-animate" id="solutions">
-        <div class="piliers-container">
-            <div class="pilier stagger-item">
-                <span class="pilier-num">01</span>
-                <span class="pilier-label">— INFRASTRUCTURE IA SUR MESURE</span>
+
+    <!-- 2. Solutions -->
+    <section class="solutions section-animate" id="solutions">
+        <div class="solutions-header">
+            <p class="section-label">Ce qu'on fait concrètement</p>
+            <h2>Infrastructure IA &amp; Agents IA Immobilier</h2>
+            <p class="solutions-intro">Nos solutions ne sont pas des logiciels génériques. Chez FocusAI, nous construisons une <strong>infrastructure IA</strong> unique, déployons des <strong>agents IA immobilier</strong>, et adaptons le tout aux processus spécifiques de chaque agence.</p>
+        </div>
+
+        <div class="pillars-row">
+            <div class="pillar-card stagger-item">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h7M17.5 14v7"/></svg>
+                </div>
+                <h3>Infrastructure IA sur mesure</h3>
+                <p>On part de vos outils actuels pour construire une architecture IA qui s'y intègre naturellement, sans friction.</p>
             </div>
-            <div class="pilier stagger-item">
-                <span class="pilier-num">02</span>
-                <span class="pilier-label">— ADAPTÉ À VOS OUTILS ACTUELS</span>
+            <div class="pillar-card stagger-item">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3>Adapté à vos outils actuels</h3>
+                <p>Hektor, Apimo, Netty, WhatsApp, Google Agenda… On se connecte à ce que vous utilisez déjà.</p>
             </div>
-            <div class="pilier stagger-item">
-                <span class="pilier-num">03</span>
-                <span class="pilier-label">— ACCOMPAGNEMENT COMPLET OFFERT</span>
+            <div class="pillar-card stagger-item">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Accompagnement complet offert</h3>
+                <p>Formation de vos équipes, documentation, ajustements. On reste disponibles bien après le déploiement.</p>
             </div>
         </div>
-        <div class="separator"></div>
 
-        <div class="solutions-details">
-            <h3 class="solutions-subtitle">Infrastructure IA & Agents IA Immobilier</h3>
-            <p class="solutions-desc">Nos solutions ne sont pas des logiciels génériques. Chez FocusAI, nous construisons une <strong>infrastructure IA</strong> unique, déploions des <strong>agents IA immobilier</strong>, et adaptons le tout aux processus spécifiques de chaque agence.</p>
-            <p class="solutions-desc" style="font-weight: 500; color: var(--accent-main); font-size: 20px; margin-top: 20px;">↓ Voici quelques exemples d'automatisation immobilière réalisés pour nos clients :</p>
+        <div class="cases-section">
+            <p class="section-label">Exemples réels chez nos clients</p>
             <div class="cases-grid">
-                <div class="case-card">
-                    <h4>Qualification Acquéreurs Entrants</h4>
-                    <p><strong>Agence Immobilière Indépendante</strong></p>
-                    <p style="margin-top:10px; opacity:0.8;">Économie de 5h par jour sur le traitement des leads. Qualification 100% automatisée des capacités de financement et des critères via WhatsApp avec redirection immédiate des profils chauds.</p>
+                <div class="case-card stagger-item">
+                    <div class="case-header">
+                        <span class="case-type">Qualification Acquéreurs</span>
+                        <span class="case-client">Agence indépendante</span>
+                    </div>
+                    <p>Économie de <strong>5h par jour</strong> sur le traitement des leads. Qualification 100% automatisée des capacités de financement et des critères via WhatsApp, avec redirection immédiate des profils chauds vers les négociateurs.</p>
                 </div>
-                <div class="case-card">
-                    <h4>Assistant Commercial IA</h4>
-                    <p><strong>Agence de Tours (8 collaborateurs)</strong></p>
-                    <p style="margin-top:10px; opacity:0.8;">Zéro outil supplémentaire : un assistant WhatsApp qui dicte les comptes rendus, qualifie les vendeurs, et relance automatiquement sans friction pour les 8 collaborateurs de l'agence.</p>
+                <div class="case-card stagger-item">
+                    <div class="case-header">
+                        <span class="case-type">Assistant Commercial IA</span>
+                        <span class="case-client">Agence de Tours — 8 collaborateurs</span>
+                    </div>
+                    <p>Zéro outil supplémentaire pour l'équipe. Un assistant WhatsApp qui dicte les comptes rendus de visite, qualifie les vendeurs et relance automatiquement — sans changer leurs habitudes.</p>
                 </div>
-                <div class="case-card">
-                    <h4>Relances Acquéreurs</h4>
-                    <p><strong>Réseau d'Agences (Grand Est)</strong></p>
-                    <p style="margin-top:10px; opacity:0.8;">Élimination totale des oublis de relance post-visite. Déclenchement conditionnel à J+7 et réactivation d'une base de 10 000 contacts dormants synchronisée en temps réel avec le CRM.</p>
+                <div class="case-card stagger-item">
+                    <div class="case-header">
+                        <span class="case-type">Relances Acquéreurs</span>
+                        <span class="case-client">Réseau d'agences — Grand Est</span>
+                    </div>
+                    <p>Élimination totale des oublis de relance post-visite. Déclenchement conditionnel à J+7 et réactivation de <strong>10 000 contacts dormants</strong> synchronisée en temps réel avec le CRM.</p>
                 </div>
-            </div>
-        </div>
-
-        <div class="marquee-container">
-            <div class="marquee-content">
-                Agents IA Immobilier · Infrastructure IA · Automatisation Immobilière · Relances Acquéreurs · Réception Téléphonique · FocusAI · Synchronisation CRM · Assistant Commercial IA · Agents IA Immobilier · Infrastructure IA · Automatisation Immobilière · Relances Acquéreurs · Réception Téléphonique · FocusAI · Synchronisation CRM ·
-            </div>
-            <div class="marquee-content" aria-hidden="true">
-                Agents IA Immobilier · Infrastructure IA · Automatisation Immobilière · Relances Acquéreurs · Réception Téléphonique · FocusAI · Synchronisation CRM · Assistant Commercial IA · Agents IA Immobilier · Infrastructure IA · Automatisation Immobilière · Relances Acquéreurs · Réception Téléphonique · FocusAI · Synchronisation CRM ·
             </div>
         </div>
     </section>
 
-    <!-- 3. Déclaration Centrale -->
+    <!-- 3. Citation / Déclaration -->
     <section class="declaration section-animate" id="references">
-        <div class="declaration-content">
-            <h2 class="declaration-title reveal-words">FocusAI : Construit autour des vraies contraintes des agents immobiliers —
-                et de ce qu'ils n'ont pas le temps de faire.</h2>
-            <div class="declaration-line line-grow"></div>
-            <p class="declaration-subtitle reveal-fade delay-1">Chaque système est livré testé, documenté et
-                opérationnel.</p>
+        <div class="declaration-inner">
+            <p class="declaration-label">Notre conviction</p>
+            <blockquote class="declaration-quote">
+                "FocusAI est construit autour des vraies contraintes des agents immobiliers — et de tout ce qu'ils n'ont pas le temps de faire."
+            </blockquote>
+            <p class="declaration-sub">Chaque système est livré testé, documenté et opérationnel. Pas de démo, pas de promesse vague.</p>
         </div>
-
-        <div class="stat-banner stat-reveal section-animate">
-            <div class="stat-giant counter" data-target="98" data-suffix="%" style="transition: color 0.3s;">0%</div>
-            <div class="stat-label">Taux de satisfaction client — systèmes livrés clé en main</div>
+        <div class="declaration-stat">
+            <div class="big-stat">
+                <span class="counter" data-target="98" data-suffix="%">0%</span>
+            </div>
+            <p>de satisfaction client<br><em>sur l'ensemble des projets livrés</em></p>
         </div>
     </section>
 
-    <!-- 4. Le Processus d'Intégration -->
-    <section class="science section-animate" id="methode">
-        <div class="science-container">
-            <div class="science-left slide-right">
-                <h2 class="science-title">Processus d'Automatisation Immobilière</h2>
-                <span class="science-tag">( MÉTHODE ÉPROUVÉE )</span>
-                <p class="science-body">Nous ne vous vendons pas un outil standard, nous vous accompagnons dans une transition technologique complète. De la première discussion au déploiement final, chaque étape est structurée pour garantir l'adoption par vos équipes et un retour sur investissement immédiat.</p>
-                <a href="#contact" class="btn-text" style="display: inline-flex; align-items: center; gap: 5px;">Démarrer le processus <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-            </div>
-            <div class="science-right catalogue">
-                <div class="module-item stagger-item">
-                    <div class="module-info">
-                        <span class="module-num">01</span>
-                        <span class="module-name">— Audit des Processus Actuels</span>
-                    </div>
-                </div>
-                <div class="module-item stagger-item">
-                    <div class="module-info">
-                        <span class="module-num">02</span>
-                        <span class="module-name">— Démonstration & Cahier des Charges</span>
-                    </div>
-                </div>
-                <div class="module-item stagger-item">
-                    <div class="module-info">
-                        <span class="module-num">03</span>
-                        <span class="module-name">— Phase de Test & Sandbox</span>
-                    </div>
-                </div>
-                <div class="module-item stagger-item">
-                    <div class="module-info">
-                        <span class="module-num">04</span>
-                        <span class="module-name">— Déploiement V1 & Formation</span>
-                    </div>
-                </div>
-                <div class="module-item stagger-item">
-                    <div class="module-info">
-                        <span class="module-num">05</span>
-                        <span class="module-name">— Ajustements Finaux & Maintenance</span>
-                    </div>
+    <!-- 4. Méthode -->
+    <section class="methode section-animate" id="methode">
+        <div class="methode-header">
+            <p class="section-label">Processus d'Automatisation Immobilière</p>
+            <h2>Comment ça se passe,<br>de A à Z</h2>
+            <p>Pas de surprise. On vous explique exactement ce qui se passe à chaque étape, de l'audit jusqu'au déploiement en production.</p>
+        </div>
+        <div class="methode-steps">
+            <div class="methode-step stagger-item">
+                <span class="step-num">01</span>
+                <div class="step-content">
+                    <h3>Audit des processus actuels</h3>
+                    <p>On analyse vos flux de travail, vos outils, vos CRM. On identifie les tâches automatisables et les gains de temps potentiels.</p>
                 </div>
             </div>
+            <div class="methode-step stagger-item">
+                <span class="step-num">02</span>
+                <div class="step-content">
+                    <h3>Démonstration & cahier des charges</h3>
+                    <p>On vous montre concrètement ce qu'on va construire. On valide ensemble le périmètre avant de commencer.</p>
+                </div>
+            </div>
+            <div class="methode-step stagger-item">
+                <span class="step-num">03</span>
+                <div class="step-content">
+                    <h3>Phase de test & sandbox</h3>
+                    <p>Les agents sont déployés en environnement de test. Vos équipes les testent en conditions réelles avant mise en production.</p>
+                </div>
+            </div>
+            <div class="methode-step stagger-item">
+                <span class="step-num">04</span>
+                <div class="step-content">
+                    <h3>Déploiement V1 & formation</h3>
+                    <p>Mise en production. On forme vos équipes. On documente tout. On reste joignables pour chaque question.</p>
+                </div>
+            </div>
+            <div class="methode-step stagger-item">
+                <span class="step-num">05</span>
+                <div class="step-content">
+                    <h3>Ajustements & maintenance</h3>
+                    <p>Les premiers mois, on ajuste selon vos retours. La maintenance est assurée pour que ça tourne sans accroc.</p>
+                </div>
+            </div>
+        </div>
+        <div class="methode-cta">
+            <a href="#contact" class="btn-primary">Démarrer le processus</a>
         </div>
     </section>
 
-    <!-- 5. Galerie Stats -->
-    <section class="galerie-stats section-animate">
-        <div class="stats-col stats-left">
-            <div class="stats-content reveal-fade delay-1">
-                <span class="stats-label">AGENCES AUDITÉES</span>
-                <div class="stats-value"><span class="counter" data-target="100">0</span>+ agences immobilières auditées</div>
+    <!-- 5. Stats -->
+    <section class="stats-section section-animate">
+        <div class="stats-grid">
+            <div class="stat-block">
+                <div class="stat-number"><span class="counter" data-target="100">0</span>+</div>
+                <p class="stat-desc">agences immobilières auditées en France</p>
             </div>
-            <div class="stats-separator"></div>
-        </div>
-        <div class="stats-col stats-right">
-            <div class="stat-bg-number">100%</div>
-            <div class="stats-content reveal-fade delay-2">
-                <span class="stats-label">PROJETS LIVRÉS</span>
-                <div class="stats-value">100% sur mesure</div>
+            <div class="stat-block stat-block--accent">
+                <div class="stat-number">100%</div>
+                <p class="stat-desc">des projets livrés entièrement sur mesure</p>
             </div>
-        </div>
-    </section>
-
-    <!-- 6. Formulaire d'Étude de Cas -->
-    <section class="case-study-form section-animate" style="background-color: var(--bg-dark); color: var(--text-light); padding: 120px 20px; text-align: center;">
-        <div style="max-width: 600px; margin: 0 auto;" class="slide-up">
-            <h2 style="font-family: var(--font-heading); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px;">Recevoir une Étude de Cas Détaillée</h2>
-            <p style="opacity: 0.8; margin-bottom: 40px; font-size: 18px; line-height: 1.6;">Découvrez concrètement comment nous avons transformé les processus d'une agence partenaire (cahier des charges, solutions déployées et résultats chiffrés). Laissez votre email pour recevoir l'analyse complète.</p>
-            <form id="caseStudyForm" style="display: flex; flex-direction: column; gap: 15px;">
-                <input type="email" id="caseStudyEmail" placeholder="Votre adresse email professionnelle" required style="padding: 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; width: 100%; font-family: var(--font-body); font-size: 16px; outline: none; transition: border-color 0.3s;">
-                <button type="submit" id="caseStudySubmit" class="btn-secondary" style="width: 100%; border: 1px solid rgba(255, 255, 255, 0.3); display: flex; align-items: center; justify-content: center; gap: 5px;">Recevoir l'étude de cas <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></button>
-            </form>
-            <div id="caseStudySuccess" style="display: none; color: #49A0E3; margin-top: 15px; font-weight: bold; padding: 15px; border: 1px solid #49A0E3; border-radius: 12px; background: rgba(73, 160, 227, 0.1);">
-                ✓ Parfait ! L'étude de cas a été envoyée à votre adresse email.
+            <div class="stat-block">
+                <div class="stat-number">3–6</div>
+                <p class="stat-desc">semaines de déploiement en moyenne</p>
             </div>
         </div>
     </section>
 
-    <!-- Tarifs -->
+    <!-- 6. Étude de cas -->
+    <section class="case-study-cta section-animate">
+        <div class="case-study-inner">
+            <div class="case-study-text">
+                <p class="section-label">Étude de cas</p>
+                <h2>Voir comment on a transformé une agence partenaire</h2>
+                <p>Cahier des charges, solutions déployées et résultats chiffrés. Laissez votre email, on vous envoie l'analyse complète.</p>
+            </div>
+            <div class="case-study-form-wrap">
+                <form id="caseStudyForm">
+                    <input type="email" id="caseStudyEmail" placeholder="votre@email.pro" required>
+                    <button type="submit" id="caseStudySubmit" class="btn-primary">Recevoir l'étude de cas</button>
+                </form>
+                <div id="caseStudySuccess">
+                    ✓ C'est envoyé ! Vérifiez votre boîte mail.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Tarifs -->
     <section class="tarifs section-animate" id="tarifs">
-        <div class="tarifs-container">
-            <h2 class="tarifs-title">Tarification Sur Mesure</h2>
-            <div class="tarifs-content">
-                <p>Chez FocusAI, nous ne proposons pas de forfaits pré-définis. Chaque agence immobilière a des processus uniques, des outils spécifiques et des contraintes différentes.</p>
-                <br>
-                <p>C'est pourquoi nous concevons des <strong>architectures de croissance 100% personnalisées</strong>. Le coût de nos intégrations est évalué au cas par cas, en fonction de la complexité de vos systèmes et du temps gagné estimé.</p>
-                <br><br>
-                <a href="#" onclick="openAuditModal(event)" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 5px;">Demander une estimation <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+        <div class="tarifs-inner">
+            <div class="tarifs-text">
+                <p class="section-label">Tarification</p>
+                <h2>Pas de forfait standard.<br>Un devis selon votre réalité.</h2>
+                <p>Chaque agence immobilière a ses propres outils, ses propres contraintes. Le coût d'un projet dépend du nombre de processus à automatiser et du gain de temps estimé pour votre équipe.</p>
+                <p class="tarifs-note">L'audit gratuit permet d'établir un cahier des charges et une estimation transparente, sans engagement.</p>
+                <a href="#" onclick="openAuditModal(event)" class="btn-primary" style="margin-top: 2rem; display: inline-block;">Demander une estimation</a>
+            </div>
+            <div class="tarifs-aside">
+                <div class="tarifs-card">
+                    <p class="tarifs-card-label">Ce qui est toujours inclus</p>
+                    <ul>
+                        <li>Audit des processus existants</li>
+                        <li>Architecture technique sur mesure</li>
+                        <li>Intégration à vos CRM &amp; outils</li>
+                        <li>Phase de test en sandbox</li>
+                        <li>Formation des équipes</li>
+                        <li>Documentation complète</li>
+                        <li>Maintenance &amp; ajustements</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- 8. FAQ -->
     <section class="faq section-animate" id="faq">
         <div class="faq-container">
             <div class="faq-header">
-                <span class="faq-tag">FAQ</span>
-                <h2 class="faq-title">Questions fréquentes</h2>
-                <p class="faq-intro">Tout ce que les dirigeants d'agences immobilières nous demandent avant de lancer un projet d'automatisation avec FocusAI.</p>
+                <p class="section-label">FAQ</p>
+                <h2>Questions fréquentes</h2>
+                <p>Tout ce que les dirigeants d'agences immobilières nous demandent avant de lancer un projet d'automatisation.</p>
             </div>
             <div class="faq-list" role="list">
                 <div class="faq-item">
@@ -374,14 +408,18 @@
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- 9. Contact -->
     <section class="contact section-animate" id="contact">
-        <div class="contact-container">
-            <h2 class="contact-title">Prêt à automatiser ?</h2>
-            <p>Réservez votre audit gratuit ou contactez-nous directement pour discuter de vos besoins.</p>
-            <div class="contact-links">
-                <a href="#" onclick="openAuditModal(event)" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 5px;">Réserver un Audit <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-                <a href="mailto:contact@focus-ai.studio" class="btn-text" style="color: white; border-color: white;">contact@focus-ai.studio</a>
+        <div class="contact-inner">
+            <div class="contact-text">
+                <p class="section-label" style="color: rgba(255,255,255,0.6);">On vous répond vite</p>
+                <h2>Prêt à automatiser votre agence ?</h2>
+                <p>Réservez un audit gratuit ou envoyez-nous un message. Un expert vous recontacte dans les 24h.</p>
+                <a href="mailto:contact@focus-ai.studio" class="contact-email">contact@focus-ai.studio</a>
+            </div>
+            <div class="contact-action">
+                <a href="#" onclick="openAuditModal(event)" class="btn-cta-white">Réserver mon audit gratuit</a>
+                <p class="contact-note">Gratuit · Sans engagement · Réponse sous 24h</p>
             </div>
         </div>
     </section>
@@ -391,15 +429,21 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="logo.png" alt="FocusAI Logo" style="height: 60px; margin-bottom: 20px;">
-                <p>Architectures de croissance automatisées pour les agences immobilières. Oubliez la prospection chronophage, passez à l'ère de l'IA.</p>
+                <img src="logo.png" alt="FocusAI Logo" class="footer-logo">
+                <p>Systèmes d'automatisation immobilière sur mesure, construits autour de vos processus et de vos outils.</p>
+                <a href="https://www.linkedin.com/in/achille-plaisant-automatisation-immobilier" target="_blank" rel="noopener noreferrer" class="footer-linkedin">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                </a>
             </div>
             <div class="footer-links">
                 <h4>Solutions</h4>
                 <ul>
                     <li><a href="#solutions">Infrastructure IA sur mesure</a></li>
                     <li><a href="#solutions">Adapté à vos outils</a></li>
-                    <li><a href="#solutions">Accompagnement complet offert</a></li>
+                    <li><a href="#solutions">Accompagnement inclus</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -412,28 +456,21 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-contact">
+            <div class="footer-contact-col">
                 <h4>Contact</h4>
                 <p>contact@focus-ai.studio</p>
                 <p>Basé en France</p>
-                <a href="#" onclick="openAuditModal(event)" style="display:inline-block; margin-top:10px; color:var(--accent-sec); text-decoration:underline; margin-bottom: 15px;">Prendre RDV</a>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <a href="https://www.linkedin.com/in/achille-plaisant-automatisation-immobilier" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 5px; color: white; opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                </div>
+                <a href="#" onclick="openAuditModal(event)" class="footer-rdv">Prendre RDV →</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 FocusAI. Tous droits réservés.</p>
+            <p>© 2026 FocusAI. Tous droits réservés.</p>
             <div class="legal-links">
                 <a href="mentions-legales.html">Mentions Légales</a>
-                <a href="politique-confidentialite.html">Politique de Confidentialité</a>
+                <a href="politique-confidentialite.html">Confidentialité</a>
                 <a href="cgv.html">CGV</a>
             </div>
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">↑ Retour en haut</button>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">↑ Haut</button>
         </div>
     </footer>
 
@@ -459,5 +496,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
