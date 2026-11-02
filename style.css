@@ -390,6 +390,10 @@ body.cursor-on-dark.hovering .cursor-outline {
     transform: translateY(0);
 }
 
+/* Desktop: show full, hide short */
+.subtitle-desktop { display: inline; }
+.subtitle-mobile  { display: none; }
+
 /* Hero bottom row: KPI | bouton | KPI */
 .hero-bottom-row {
     display: grid;
@@ -1480,8 +1484,16 @@ body.cursor-on-dark.hovering .cursor-outline {
     
     /* Typography adjustments */
     .hero-title {
-        font-size: clamp(24px, 7vw, 36px) !important;
-        margin-bottom: 16px !important;
+        font-size: 46px !important;
+        line-height: 1.1 !important;
+        margin-bottom: 20px !important;
+    }
+    .subtitle-desktop { display: none !important; }
+    .subtitle-mobile  { display: inline !important; }
+    .hero-subtitle {
+        font-size: 15px !important;
+        margin-bottom: 28px !important;
+        padding: 0 4px;
     }
     .btn-primary--hero {
         padding: 12px 20px !important;
