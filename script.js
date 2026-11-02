@@ -7,10 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let mouseY = window.innerHeight / 2;
     let outlineX = mouseX;
     let outlineY = mouseY;
+    let cursorRAFActive = false;
 
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        if (!cursorRAFActive) {
+            cursorRAFActive = true;
+            requestAnimationFrame(animateCursor);
+        }
     });
 
     function animateCursor() {
@@ -19,9 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
             outlineY += (mouseY - outlineY) * 0.15;
             cursorOutline.style.transform = `translate3d(${outlineX}px, ${outlineY}px, 0) translate(-50%, -50%)`;
         }
-        requestAnimationFrame(animateCursor);
+        const dx = Math.abs(mouseX - outlineX);
+        const dy = Math.abs(mouseY - outlineY);
+        if (dx > 0.1 || dy > 0.1) {
+            requestAnimationFrame(animateCursor);
+        } else {
+            cursorRAFActive = false;
+        }
     }
-    animateCursor();
 
     // Change cursor color based on section background
     const darkSections = document.querySelectorAll('.hero, .galerie-stats, .ingenierie, .contact, .stat-banner, .navbar, .footer');
@@ -81,6 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1.5. Remove Logo Background (Canvas Chroma Key)
     const logoImg = document.querySelector('.nav-logo img');
     if (logoImg) {
+        // Hide logo immediately to avoid flash of the original background
+        logoImg.classList.add('logo-processing');
         // Run when the image is fully loaded
         if (logoImg.complete) {
             removeBackground(logoImg);
@@ -124,6 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.putImageData(imageData, 0, 0);
             // Replace the image source with the transparent version
             imgElement.src = canvas.toDataURL('image/png');
+            // Reveal logo after processing
+            imgElement.classList.remove('logo-processing');
+            imgElement.classList.add('logo-ready');
         };
         img.src = imgElement.src;
     }

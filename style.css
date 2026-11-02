@@ -87,6 +87,7 @@ em, i {
     height: 32px;
     border: 1px solid var(--bg-dark);
     transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.3s;
+    backface-visibility: hidden;
 }
 
 body.hovering .cursor-outline {
@@ -148,6 +149,17 @@ body.cursor-on-dark.hovering .cursor-outline {
     transform: scale(3.4);
     transform-origin: left center;
     margin-left: 12px;
+    will-change: transform;
+}
+
+.nav-logo-img.logo-processing {
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.nav-logo-img.logo-ready {
+    opacity: 1;
+    transition: opacity 0.2s ease;
 }
 
 .nav-links {
@@ -294,6 +306,7 @@ body.cursor-on-dark.hovering .cursor-outline {
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.5;
+    will-change: transform;
 }
 
 .orb-1 {
