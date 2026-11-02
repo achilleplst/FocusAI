@@ -167,6 +167,9 @@ body.cursor-on-dark.hovering .cursor-outline {
     gap: 18px;
     align-items: center;
     font-size: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-links a {
